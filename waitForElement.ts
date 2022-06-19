@@ -11,7 +11,6 @@ async function waitForElement(selector, timeout = 5000, interval = 0) {
 			console.error(`Element Check For Selector ${selector} Timed Out`);
 			return false;
 		}
-		console.log('waiting for element');
 		if (interval) await sleep();
 		await rafAsync();
 	}

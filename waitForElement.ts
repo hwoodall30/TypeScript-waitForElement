@@ -1,6 +1,6 @@
-async function waitForElement(selector: any, timeout: number = 5000, interval: number = 0): Promise<HTMLElement | Boolean> {
+async function waitForElement(selector, timeout = 5000, interval = 0) {
 	// Request Animation Frame Async
-	const rafAsync = (): Promise<any> => new Promise(resolve => requestAnimationFrame(resolve));
+	const rafAsync = () => new Promise(resolve => requestAnimationFrame(resolve));
 	// Sleep Async Function
 	const sleep = () => new Promise(r => setTimeout(r, interval));
 	//Get start time for timeout
@@ -15,5 +15,5 @@ async function waitForElement(selector: any, timeout: number = 5000, interval: n
 		if (interval) await sleep();
 		await rafAsync();
 	}
-	return document.querySelector(selector)!;
+	return document.querySelector(selector);
 }
